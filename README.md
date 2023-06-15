@@ -1,9 +1,9 @@
-# Highlights-Creator
+ # Highlights-Creator
 I created a Python program that extracts important moments from a sports game video using audio and keywords. 
 It analyzes volume peaks, recognizes exciting words through speech recognition, and prints timestamps. 
 Additionally, it generates GIFs of those moments.
 
-#Project Description:
+# Project Description:
 
 In this project, I developed a program to extract 'important' frames from a soccer game video using only the audio. 
 The main idea behind this approach is that during significant moments in a soccer game, such as goals or remarkable plays, the crowd and 
