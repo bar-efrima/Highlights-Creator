@@ -1,32 +1,104 @@
- # Highlights-Creator
-I created a Python program that extracts important moments from a sports game video using audio and keywords. 
-It analyzes volume peaks, recognizes exciting words through speech recognition, and prints timestamps. 
-Additionally, it generates GIFs of those moments.
+# **Highlights-Creator**
 
-# Project Description:
+This project features a Python program that extracts key moments from sports game videos, specifically soccer, by analyzing audio cues and recognizing keywords. The program identifies timestamps of significant moments and generates GIFs to visually represent these highlights.
 
-In this project, I developed a program to extract 'important' frames from a soccer game video using only the audio. 
-The main idea behind this approach is that during significant moments in a soccer game, such as goals or remarkable plays, the crowd and 
-commentators generate a lot of noise, resulting in a quick increase and subsequent return to 'normal' volume levels.
+---
 
-To begin, I implemented a program called "soccer.py" that operates on a given video file, assuming the filename is "soccer_game.mp4" and 
-it is placed in the root of the project folder. The first step is to extract the audio from the video file.
+## **Project Overview**
 
-Next, the program analyzes the audio by identifying areas of 'peaks' in volume. These peaks correspond to moments when the volume significantly rises 
-and subsequently decreases. The definition of a 'peak' and the numeric constants used for this analysis can be adjusted within the program. 
-It might require multiple iterations and discussions with the program to fine-tune these parameters effectively.
+The goal of this project is to extract 'important' frames from a soccer game video using audio analysis. Key assumptions are based on crowd noise and commentary volume spikes during pivotal moments like goals or remarkable plays. These moments are captured and processed to enhance the viewing experience for soccer fans.
 
-After extracting the 'peak' timestamps, the program utilizes speech recognition to convert the audio to text. 
-The entire text transcription of the video is printed to the console for debugging purposes. 
-Then, the program searches for specific exciting words such as 'wow,' 'unbelievable,' and 'stunning.' To facilitate this,
-I asked the program to compile a list of such words, which I stored in a text file and utilized in the code.
+---
 
-The program identifies the timestamps of each exciting word within the audio file and adds them to the list of 'important' game moments.
-Finally, the program prints the timestamps of these 'important' game moments to the console, with each timestamp on a separate line.
+## **Features**
 
-In additon, I added a feature which saves all the 'important' frames as a single animated gif, using the imageio library. 
-This feature provides a visual representation of the key moments in the soccer game.
+### **1. Audio Analysis for Volume Peaks**
+- Extracts audio from the video file.
+- Identifies areas of significant volume spikes, representing exciting moments in the game.
+- Volume peaks are analyzed by detecting quick rises and falls in volume.
 
-Overall, my program successfully extracts the 'important' frames from a soccer game video using audio analysis and speech recognition. 
-The combination of volume peaks and exciting word detection allows for a comprehensive identification of significant moments in the game,
-enhancing the viewing experience for soccer enthusiasts.
+### **2. Speech Recognition and Keyword Detection**
+- Converts the audio to text using speech recognition.
+- Searches for predefined exciting keywords such as "wow," "unbelievable," and "stunning."
+- Reads the keywords from a text file for easy customization.
+
+### **3. Timestamps of Important Moments**
+- Combines volume peak analysis and keyword detection to generate a list of timestamps for significant moments.
+- Prints these timestamps to the console, each on a new line.
+
+### **4. GIF Creation for Key Moments**
+- Uses the `imageio` library to extract frames corresponding to important moments.
+- Creates a single animated GIF showcasing these moments for easy sharing and viewing.
+
+---
+
+## **How It Works**
+
+1. **Input Video File**
+   - Place the soccer game video file (`soccer_game.mp4`) in the project folder's root.
+
+2. **Audio Extraction**
+   - The program extracts audio from the video file as the first step in processing.
+
+3. **Volume Peaks Analysis**
+   - Identifies significant increases in audio volume as potential key moments.
+   - Numeric constants for volume peak detection can be adjusted for better results.
+
+4. **Speech-to-Text Conversion**
+   - Converts the extracted audio to text for debugging and keyword detection.
+   - Prints the full transcription to the console.
+
+5. **Keyword Matching**
+   - Searches the transcription for exciting words stored in a text file.
+   - Matches are timestamped and added to the list of important moments.
+
+6. **GIF Generation**
+   - Extracts frames from the video at key timestamps.
+   - Combines frames into a single animated GIF representing the highlights.
+
+---
+
+## **Dependencies**
+
+- Python 3.8+
+- Required Libraries:
+  - `moviepy` (for video and audio processing)
+  - `speech_recognition` (for speech-to-text conversion)
+  - `imageio` (for GIF creation)
+
+Install dependencies with:
+```bash
+pip install moviepy speechrecognition imageio
+```
+
+---
+
+## **Running the Program**
+
+1. Ensure the video file (`soccer_game.mp4`) is in the root of the project directory.
+2. Run the program:
+   ```bash
+   python soccer.py
+   ```
+3. View the printed timestamps of significant moments in the console.
+4. The program generates an animated GIF (`highlights.gif`) in the project directory, showcasing the key moments.
+
+---
+
+## **Customization**
+
+- **Adjusting Volume Analysis**: Fine-tune the numeric constants in the code to better detect peaks based on your video’s audio characteristics.
+- **Keyword List**: Modify the keywords by editing the text file containing exciting words.
+
+---
+
+## **Future Enhancements**
+
+- Add support for multiple sports by customizing volume and keyword detection parameters.
+- Incorporate machine learning to improve detection accuracy.
+- Include a graphical user interface (GUI) for ease of use.
+- Enable real-time processing for live games.
+
+---
+
+This program offers a streamlined way to identify and visualize exciting moments in soccer games, enhancing the experience for sports enthusiasts. Enjoy creating and sharing your game highlights!
